@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置切面-->
+    <bean id="sleepHelper" class="com.baidu.aop.aop_01.SleepHelper"></bean>
+    <!--配置切入点-->
+    <bean id="sleepPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+        <property name="pattern" value=".*sleep"/>
+    </bean>
+
+    <!--配置切入点 和 通知-->
+    <bean id="sleepHelperAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <property name="advice" ref="sleepHelper"/>
+        <property name="pointcut" ref="sleepPointcut"/>
+    </bean>
+
+    <!--目标-->
+    <bean id="human" class="com.baidu.aop.aop_01.Human"></bean>
+
+    <!--配置代理对象-->
+    <bean id="humanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="human"/>
+        <property name="interceptorNames" value="sleepHelperAdvisor" />
+        <property name="proxyInterfaces" value="com.baidu.aop.aop_01.Sleepable" />
+    </bean>
+
+
+
+
+</beans>

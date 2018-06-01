@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
 @Aspect
 public class SleepHelper {
 
-    @Pointcut("execution(* *..sleep(..))")
+    @Pointcut("execution(* com.baidu.aop.aop_03.*.sleep(..))")
     public void sleeppoint(){}
 
     @Before("sleeppoint()")

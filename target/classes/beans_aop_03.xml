@@ -5,10 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 配置注解扫面路径 -->
-    <context:component-scan base-package="com.baidu.aop" />
     <aop:aspectj-autoproxy/>
-    <bean name="human" class="com.baidu.aop.aop_03.Human"></bean>
+    <bean class="com.baidu.aop.aop_03.SleepHelper" id="sleepHelper"></bean>
+    <bean class="com.baidu.aop.aop_03.Human" id="human"></bean>
 
 
 

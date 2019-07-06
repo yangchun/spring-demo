@@ -19,7 +19,8 @@ public class Application {
 //        System.out.println(stu1.getName()+" "+stu1.getAge()+" "+stu1.isSmoking());
         System.out.println(teacher.getName()+" "+teacher.getAge());
         
-        System.out.println("Spring_dev");
+        System.out.println("Spring_dev_07");
+
 
     }
 

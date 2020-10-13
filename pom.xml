@@ -10,7 +10,7 @@
 
     <properties>
         <spring.version>4.1.4.RELEASE</spring.version>
-        <junit.version>4.9</junit.version>
+        <junit.version>4.13.1</junit.version>
         <!-- spring 3.X 以上请使用junit4.8 以上 -->
     </properties>
     <dependencies>
